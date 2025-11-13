@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Newton's Laws - Mindmap</title>
+    <title>physics - Mindmap</title>
     <script src="https://cdn.jsdelivr.net/npm/markmap-view@0.14.3"></script>
     <style>
         body {
@@ -26,17 +26,19 @@
 </head>
 <body>
     <header>
-        <h1>Newton's Laws - Mindmap</h1>
+        <h1>Just Mercy by Bryan Stevenson - Mindmap</h1>
     </header>
     <div id="mindmap"></div>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const { markmap } = window;
-            const { Markmap } = markmap;
+            const { Markmap, loadCSS, loadJS } = markmap;
 
+            // Create markmap
             const mindmapElement = document.getElementById('mindmap');
-
+            
+            // Define mindmap content
             const content = `
 # Newton's Laws
 
@@ -52,7 +54,7 @@
 ### Common Forces
 - Gravity
   - mg
-  - G m1 m2 / r^2
+  - G m1 m2 / r²
 - Normal force (N)
 - Friction
   - μs N
@@ -62,7 +64,7 @@
   - -k x
 - Drag forces
   - -b v
-  - -c v^2
+  - -c v²
 
 ### Motion Types
 - Linear motion
@@ -86,6 +88,7 @@
 - Change in kinetic energy ΔK
 `;
 
+            // Initialize markmap
             const mm = Markmap.create(mindmapElement, {}, content);
         });
     </script>
