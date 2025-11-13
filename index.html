@@ -1,96 +1,55 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>physics - Mindmap</title>
-    <script src="https://cdn.jsdelivr.net/npm/markmap-view@0.14.3"></script>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-        }
-        #mindmap {
-            width: 100%;
-            height: 100vh;
-            overflow: hidden;
-        }
-        header {
-            background-color: #333;
-            color: white;
-            padding: 10px 20px;
-            text-align: center;
-        }
-    </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+<title>Markmap</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-family: ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
+#mindmap {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+}
+.markmap-dark {
+  background: #27272a;
+  color: white;
+}
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.18.12/dist/style.css">
 </head>
 <body>
-    <header>
-        <h1>Just Mercy by Bryan Stevenson - Mindmap</h1>
-    </header>
-    <div id="mindmap"></div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const { markmap } = window;
-            const { Markmap, loadCSS, loadJS } = markmap;
-
-            // Create markmap
-            const mindmapElement = document.getElementById('mindmap');
-            
-            // Define mindmap content
-            const content = `
-# Newton's Laws
-
-## First Law (Inertia)
-- "Sum of forces = 0 → velocity is constant"
-- Inertial frames
-- Mass as inertia
-
-## Second Law (Dynamics)
-- "Sum of forces = dp/dt = m a"
-- Forces and free-body diagrams
-
-### Common Forces
-- Gravity
-  - mg
-  - G m1 m2 / r²
-- Normal force (N)
-- Friction
-  - μs N
-  - μk N
-- Tension
-- Spring force
-  - -k x
-- Drag forces
-  - -b v
-  - -c v²
-
-### Motion Types
-- Linear motion
-- Circular motion
-- Multi-object systems
-- Pulleys and constraints
-
-## Third Law (Action-Reaction)
-- "Force from A on B = - Force from B on A"
-- Interaction pairs
-- Internal vs external forces
-
-## Connections
-
-### Momentum
-- Impulse J = ∫F dt
-- Change in momentum Δp
-
-### Energy
-- Work W = ∫F · dr
-- Change in kinetic energy ΔK
-`;
-
-            // Initialize markmap
-            const mm = Markmap.create(mindmapElement, {}, content);
-        });
-    </script>
+<svg id="mindmap"></svg>
+<script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script><script src="https://cdn.jsdelivr.net/npm/markmap-view@0.18.12/dist/browser/index.js"></script><script src="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.18.12/dist/index.js"></script><script>(r => {
+              setTimeout(r);
+            })(function renderToolbar() {
+  const {
+    markmap,
+    mm
+  } = window;
+  const {
+    el
+  } = markmap.Toolbar.create(mm);
+  el.setAttribute('style', 'position:absolute;bottom:20px;right:20px');
+  document.body.append(el);
+})</script><script>((getMarkmap, getOptions, root2, jsonOptions) => {
+              const markmap = getMarkmap();
+              window.mm = markmap.Markmap.create(
+                "svg#mindmap",
+                (getOptions || markmap.deriveOptions)(jsonOptions),
+                root2
+              );
+              if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+                document.documentElement.classList.add("markmap-dark");
+              }
+            })(() => window.markmap,null,{"content":"Newton&apos;s Laws","children":[{"content":"First Law (Inertia)","children":[{"content":"A body remains at rest or in uniform motion unless acted upon by a net external force.","children":[],"payload":{"tag":"li","lines":"3,4"}},{"content":"Inertia is measured by mass.","children":[],"payload":{"tag":"li","lines":"4,5"}},{"content":"Newton&#x2019;s laws apply only in inertial reference frames (non-accelerating).","children":[],"payload":{"tag":"li","lines":"5,6"}},{"content":"You can only calculate internal forces within the defined system.","children":[],"payload":{"tag":"li","lines":"6,7"}},{"content":"Correct model definition is critical for identifying internal vs external forces.","children":[],"payload":{"tag":"li","lines":"7,9"}}],"payload":{"tag":"h2","lines":"2,3"}},{"content":"Second Law (Dynamics)","children":[{"content":"Common Forces","children":[{"content":"Gravity","children":[{"content":"mg","children":[],"payload":{"tag":"li","lines":"21,22"}},{"content":"Universal gravitation: G m1 m2 / r^2","children":[],"payload":{"tag":"li","lines":"22,23"}},{"content":"Weight vs mass","children":[],"payload":{"tag":"li","lines":"23,24"}}],"payload":{"tag":"li","lines":"20,24"}},{"content":"Normal force (N)","children":[{"content":"Perpendicular to surface","children":[],"payload":{"tag":"li","lines":"25,26"}},{"content":"Inclined plane expression: N = mg cos&#x3b8;","children":[],"payload":{"tag":"li","lines":"26,27"}}],"payload":{"tag":"li","lines":"24,27"}},{"content":"Friction","children":[{"content":"Static friction: &#x3bc;s N","children":[],"payload":{"tag":"li","lines":"28,29"}},{"content":"Kinetic friction: &#x3bc;k N","children":[],"payload":{"tag":"li","lines":"29,30"}},{"content":"Rolling resistance","children":[],"payload":{"tag":"li","lines":"30,31"}}],"payload":{"tag":"li","lines":"27,31"}},{"content":"Tension","children":[{"content":"Ideal ropes and pulleys","children":[],"payload":{"tag":"li","lines":"32,33"}},{"content":"Massive rope variations","children":[],"payload":{"tag":"li","lines":"33,34"}}],"payload":{"tag":"li","lines":"31,34"}},{"content":"Spring force","children":[{"content":"-k x","children":[],"payload":{"tag":"li","lines":"35,36"}},{"content":"Spring energy (&#xbd; k x&#xb2;)","children":[],"payload":{"tag":"li","lines":"36,37"}},{"content":"Springs in series and parallel","children":[],"payload":{"tag":"li","lines":"37,38"}}],"payload":{"tag":"li","lines":"34,38"}},{"content":"Drag forces","children":[{"content":"Linear drag: -b v","children":[],"payload":{"tag":"li","lines":"39,40"}},{"content":"Quadratic drag: -c v&#xb2;","children":[],"payload":{"tag":"li","lines":"40,41"}},{"content":"Terminal velocity","children":[],"payload":{"tag":"li","lines":"41,42"}}],"payload":{"tag":"li","lines":"38,42"}},{"content":"Applied forces","children":[{"content":"Push/pull forces","children":[],"payload":{"tag":"li","lines":"43,44"}},{"content":"Forces applied at an angle","children":[],"payload":{"tag":"li","lines":"44,46"}}],"payload":{"tag":"li","lines":"42,46"}}],"payload":{"tag":"h3","lines":"19,20"}}],"payload":{"tag":"h2","lines":"9,10"}},{"content":"Third Law (Action-Reaction)","children":[{"content":"&quot;Force from A on B = - Force from B on A&quot;","children":[],"payload":{"tag":"li","lines":"47,48"}},{"content":"Forces act on different objects","children":[],"payload":{"tag":"li","lines":"48,49"}},{"content":"Third-law pairs do not cancel in a free-body diagram","children":[],"payload":{"tag":"li","lines":"49,50"}},{"content":"Interaction pairs","children":[],"payload":{"tag":"li","lines":"50,51"}},{"content":"Internal vs external forces","children":[{"content":"Only external forces accelerate a system","children":[],"payload":{"tag":"li","lines":"52,53"}}],"payload":{"tag":"li","lines":"51,53"}}],"payload":{"tag":"h2","lines":"46,47"}}],"payload":{"tag":"h1","lines":"0,1"}},{})</script>
 </body>
 </html>
