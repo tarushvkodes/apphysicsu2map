@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newton's Laws - Mindmap</title>
+    <script src="https://cdn.jsdelivr.net/npm/markmap-view@0.14.3"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        #mindmap {
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Newton's Laws - Mindmap</h1>
+    </header>
+    <div id="mindmap"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const { markmap } = window;
+            const { Markmap } = markmap;
+
+            const mindmapElement = document.getElementById('mindmap');
+
+            const content = `
+# Newton's Laws
+
+## First Law (Inertia)
+- "Sum of forces = 0 → velocity is constant"
+- Inertial frames
+- Mass as inertia
+
+## Second Law (Dynamics)
+- "Sum of forces = dp/dt = m a"
+- Forces and free-body diagrams
+
+### Common Forces
+- Gravity
+  - mg
+  - G m1 m2 / r^2
+- Normal force (N)
+- Friction
+  - μs N
+  - μk N
+- Tension
+- Spring force
+  - -k x
+- Drag forces
+  - -b v
+  - -c v^2
+
+### Motion Types
+- Linear motion
+- Circular motion
+- Multi-object systems
+- Pulleys and constraints
+
+## Third Law (Action-Reaction)
+- "Force from A on B = - Force from B on A"
+- Interaction pairs
+- Internal vs external forces
+
+## Connections
+
+### Momentum
+- Impulse J = ∫F dt
+- Change in momentum Δp
+
+### Energy
+- Work W = ∫F · dr
+- Change in kinetic energy ΔK
+`;
+
+            const mm = Markmap.create(mindmapElement, {}, content);
+        });
+    </script>
+</body>
+</html>
